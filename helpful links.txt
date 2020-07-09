@@ -1,0 +1,3 @@
+https://github.com/RayBB/random-stock-picker
+https://stackoverflow.com/questions/48552343/how-can-i-execute-a-python-script-from-an-html-button/48552490
+https://stackoverflow.com/questions/55456752/taking-user-input-from-html-form-as-a-variable-for-python-script
