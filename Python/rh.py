@@ -11,14 +11,15 @@ print(stockChoice)
 
 # login to users Robinhood account and purchase $5 worth of stock
 # TODO: get user info from sign in
+# password = input("Enter Password: ")
+password = "Bray8951!"
 rh.login(username="braypolk@comcast.net", password="")
 profile = rh.load_account_profile()
-print(profile)
-# TODO: get the cash held by robinhood and check to see if enough money is in account
 
-# test price will be 1 cent
 stockInfo = rh.find_instrument_data(stockChoice)
-rh.order_buy_fractional_by_price(stockChoice, 0.01)
-# TODO: need to test for error if stock is invalid
+if(stockInfo[0].get('fractional_tradability') == "tradable"):
+    print("SUCCESS")
+    # print(rh.order_buy_fractional_by_price(stockChoice, 1.00, 'ioc'))
+# print(rh.order("TEUM", 1, 'market', 'immediate','buy', None, None, 'gtc', False))
 print("printing stock Info from robinhood")
 print(stockInfo)
