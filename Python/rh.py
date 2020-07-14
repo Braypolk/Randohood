@@ -12,7 +12,9 @@ def home():
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == 'POST':
-        print(rh.login(request.form['username'], request.form['password'], 30))
+        # TODO: store session should be false for final
+        print(rh.login(username=request.form['username'], password=request.form['password'], expiresIn=30, scope="internal" ,by_sms=True, store_session=True))
+        # TODO: need to deal with 2FA
         profile = rh.load_account_profile()
         return redirect(url_for('purchase'))
     return render_template('index.html')
@@ -24,15 +26,12 @@ def purchase():
         stocks = json.load(json_file)
     stockChoice = random.choice(stocks)
     print(stockChoice)
-
-    stockInfo = rh.find_instrument_data(stockChoice)
-    price = ""
-    if(stockInfo[0].get('fractional_tradability') == "tradable"):
-        print("SUCCESS")
-        # timeInForce must be gfd
-        amount = 1.00
-        # purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
-        # price = purchase["price"]
+    print("SUCCESS")
+    amount = 1.00
+    # timeInForce must be gfd
+    # purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
+    # price = purchase["price"]
+    price=""
     return render_template("overview.html", randomStock=stockChoice, purchasePrice=price, dollarAmountPurchased=amount)
 
 @app.route("/logout")
