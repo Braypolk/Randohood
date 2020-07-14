@@ -13,7 +13,7 @@ def home():
 def login():
     if request.method == 'POST':
         # TODO: store session should be false for final
-        print(rh.login(username=request.form['username'], password=request.form['password'], expiresIn=30, scope="internal" ,by_sms=True, store_session=True))
+        print(rh.login(username=request.form['username'], password=request.form['password'], expiresIn=3000, scope="internal" ,by_sms=True, store_session=True))
         # TODO: need to deal with 2FA
         profile = rh.load_account_profile()
         return redirect(url_for('purchase'))
@@ -40,4 +40,5 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    # app.run(debug = True)
+    app.run(host='0.0.0.0', port=3245, debug=True)
