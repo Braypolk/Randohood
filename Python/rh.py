@@ -32,7 +32,7 @@ def purchase():
     # purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
     # price = purchase["price"]
     price=""
-    return render_template("overview.html", randomStock=stockChoice, purchasePrice=price, dollarAmountPurchased=amount)
+    return render_template("overview.html", randomStock=stockChoice, dollarAmountPurchased=amount, purchasePrice=price)
 
 @app.route("/logout")
 def logout():
