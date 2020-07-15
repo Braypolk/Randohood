@@ -3,7 +3,8 @@
     font-weight: 400;
 }
 body{
-    padding: 0 30px;
+    width: 80%;
+    margin: 0 auto;
 }
 .nav{
     padding: 20px;
@@ -54,4 +55,59 @@ body{
     font-weight: 600;
     font-size: 2rem;
     color: rgb(0,200,5);
+}
+.reRoll{
+    text-align: center;
+    width: 35vw;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+form{
+    display: block;
+}
+input{ 
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 4px;
+    margin: 15px 0;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 20px;
+    outline: none;
+}
+input:focus{
+    border:1px solid rgb(0,200,5);
+}
+input:hover{
+    background-color: white;
+}
+input[type=submit]{
+    width: 150px;
+    background-color: rgb(0,200,5);
+    color: white;
+}
+.amount, .terms{
+    display: inline;
+}
+.amount input, .terms input{
+    width: auto;
+}
+.submit{
+    display: block;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .reRoll{
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 5rem;
+    }
+    .terms{
+        display: block;
+    }
 }

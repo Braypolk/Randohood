@@ -19,15 +19,19 @@ def login():
         return redirect(url_for('purchase'))
     return render_template('index.html')
 
-@app.route("/purchase")
-def purchase():
+@app.route("/purchase", methods=['GET','POST'])
+def purchase():  
+    amount = 1.00
+    if request.method == 'POST':
+        amount = request.form['userDefAmount']
     # import stocks from json file and choose random stock
     with open('../stocks.json') as json_file:
         stocks = json.load(json_file)
     stockChoice = random.choice(stocks)
     print(stockChoice)
     print("SUCCESS")
-    amount = 1.00
+    print("AMOUNT")
+    print(amount)
     # timeInForce must be gfd
     # purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
     # price = purchase["price"]

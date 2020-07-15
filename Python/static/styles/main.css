@@ -1,15 +1,40 @@
 *{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.top{
+    margin-top: 20vh;
+    padding: 0;
+    width: 100%;
 }
 div{
     display: inline-block;
 }
-
+.center{
+    width: 80%;
+    margin: 0 10%;
+}
 .list{
+    padding-bottom: 80px;
     max-width: 500px;
-    margin: 25vh auto;
-    padding: 0 30px;
+    margin: 0 4rem;
+    vertical-align: top;
+}
+
+.terms{
+    max-width: 500px;
+    margin: 0 4rem;
+    vertical-align: top;
+    font-size: .9rem;
+}
+.title{
+    display: inline-block;
+    padding-right: 1rem;
+}
+.dice{
+    height:3rem;
 }
 
 input{ 
@@ -41,4 +66,11 @@ input[type=submit]{
 }
 input#terms{
     width: 30px
+}
+a{
+    text-decoration: none;
+    color: rgb(0,200,5)
+}
+a:hover{
+    color: gray;
 }

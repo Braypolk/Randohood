@@ -7,30 +7,35 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/main.css')}}">
 </head>
 <body>    
+    <div class="top"></div>
     <!-- need to change action to send username and password to python -->
-    <div class="list">
-        <h1 class="title">Welcome to  Randohood</h1>
-        <form action="" method="POST">
-            <!-- need to make this hidden somehow -->
-            <input type = "text" name = "username" placeholder="User Name" required>
-            <input type = "password" name = "password" placeholder="Password" required>
-            <div class="termsClear">
-                <label for="terms">Terms of Use</label>
-                <input type="checkbox" id="terms" required>
-            </div>
-            <input type = "submit" name = "Submit" value="Sign In">
-        </form>
-    </div>
-    <div class="terms">
-        <h2>Terms of Use</h2>
-        <ul>
-            <li>By checking the box above and pressing submit you agree to immediately purchase $10 worth of a random stock at the current market price.</li>
-            <li>By reloading the page, another purchase will occur.</li>
-            <li>No one involved in the making of this has any influence to what stock is chosen</li>
-            <li>The makers of this web app will not held accountable for the actions of the user</li>
-            <li>The purchase will only be immediately completed during Regular trading hours for the U.S. stock market. Otherwise, the order will be pending</li>
-            <li>the code can be viewed <a href="https://github.com/Braypolk/Randohood">here</a></li>
-        </ul>
+    <div class="center">
+        <div class="list">
+            <h1 class="title">Welcome to  Randohood</h1>
+            <img class="dice" src="../static/img/dices.svg" alt="dice">
+            <form action="" method="POST">
+                <!-- need to make this hidden somehow -->
+                <input type = "text" name = "username" placeholder="User Name" required>
+                <input type = "password" name = "password" placeholder="Password" required>
+                <div class="termsClear">
+                    <label for="terms">Terms of Use</label>
+                    <input type="checkbox" id="terms" required>
+                </div>
+                <input type = "submit" name = "Submit" value="Sign In">
+            </form>
+        </div>
+        
+        <div class="terms">
+            <h2>Terms of Use</h2>
+            <ul>
+                <li>By checking the box above and pressing submit you agree to immediately purchase $10 worth of a random stock at the current market price.</li>
+                <li>By reloading the page, another purchase will occur.</li>
+                <li>No one involved in the making of this has any influence to what stock is chosen</li>
+                <li>The makers of this web app will not held accountable for the actions of the user</li>
+                <li>The purchase will only be immediately completed during Regular trading hours for the U.S. stock market. Otherwise, the order will be pending</li>
+                <li>the code can be viewed <a href="https://github.com/Braypolk/Randohood" target="_blank">here</a></li>
+            </ul>
+        </div>
     </div>
     
 </body>
