@@ -3,7 +3,11 @@ import json
 import random
 import os
 import requests
-from flask import Flask, render_template, request, url_for, redirect
+import logging
+from flask import Flask, render_template, request, url_for, redirect, Response
+
+def test():
+    print("test")
 
 app = Flask(__name__)
 @app.route("/")
@@ -13,8 +17,11 @@ def home():
 @app.route("/login", methods=['GET','POST'])
 def login():
     if request.method == 'POST':
+        try:
+            print(rh.login(username=request.form['username'], password=request.form['password'], expiresIn=3000, scope="internal" ,by_sms=True, store_session=False))
+        except:
+            return render_template('index.html')
         # TODO: store session should be false for final
-        print(rh.login(username=request.form['username'], password=request.form['password'], expiresIn=3000, scope="internal" ,by_sms=True, store_session=True))
         # TODO: need to deal with 2FA
         profile = rh.load_account_profile()
         return redirect(url_for('purchase'))
