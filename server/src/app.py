@@ -1,6 +1,7 @@
 import robin_stocks as rh
 import json
 import random
+import os
 import requests
 from flask import Flask, render_template, request, url_for, redirect
 
@@ -25,13 +26,9 @@ def purchase():
     if request.method == 'POST':
         amount = request.form['userDefAmount']
     # import stocks from json file and choose random stock
-    with open('../stocks.json') as json_file:
-        stocks = json.load(json_file)
+    stocks = requests.get('https://dumbstockapi.com/stock?format=tickers-only&exchange=NASDAQ').json()
     stockChoice = random.choice(stocks)
     print(stockChoice)
-    print("SUCCESS")
-    print("AMOUNT")
-    print(amount)
     # timeInForce must be gfd
     # purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
     # price = purchase["price"]
@@ -44,5 +41,4 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == "__main__":
-    # app.run(debug = True)
-    app.run(host='0.0.0.0', port=3245, debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=True)
