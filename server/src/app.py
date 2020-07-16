@@ -6,8 +6,7 @@ import requests
 import logging
 from flask import Flask, render_template, request, url_for, redirect, Response
 
-def test():
-    print("test")
+code = 0
 
 app = Flask(__name__)
 @app.route("/")
@@ -18,7 +17,7 @@ def home():
 def login():
     if request.method == 'POST':
         try:
-            print(rh.login(username=request.form['username'], password=request.form['password'], expiresIn=3000, scope="internal" ,by_sms=True, store_session=False))
+            rh.login(username=request.form['username'], password=request.form['password'], expiresIn=3000, scope="internal" ,by_sms=True, store_session=False)
         except:
             return render_template('index.html')
         # TODO: store session should be false for final
@@ -46,6 +45,17 @@ def purchase():
 def logout():
     rh.logout()
     return redirect(url_for('login'))
+
+@app.route("/multifactor", methods=['GET','POST'])
+def multifactor():
+    if request.method == 'POST':
+        global code
+        code = request.form['code']
+    return render_template('check.html')
+
+def check():
+    redirect(url_for('multifactor'))
+    return code
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=True)
