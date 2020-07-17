@@ -46,16 +46,6 @@ def logout():
     rh.logout()
     return redirect(url_for('login'))
 
-@app.route("/multifactor", methods=['GET','POST'])
-def multifactor():
-    if request.method == 'POST':
-        global code
-        code = request.form['code']
-    return render_template('check.html')
-
-def check():
-    redirect(url_for('multifactor'))
-    return code
-
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=True)
+    app.run(debug=True)
+    # app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=True)
