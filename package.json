@@ -1,0 +1,22 @@
+{
+  "name": "randohood",
+  "version": "1.0.0",
+  "description": "After logging in, a random stock from the Nasdaq Stock Market (Nasdaq) will be chosen. This stock will then be purchased from the user entered Robinhood account.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Braypolk/Randohood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Braypolk/Randohood/issues"
+  },
+  "homepage": "https://github.com/Braypolk/Randohood#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,113 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+.nav{
+    padding: 20px;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+}
+.one{
+    grid-column: 1 / 2;
+    padding: 10px;
+    display: inline-block;
+}
+.two{
+    grid-column: 2 / 3;
+}
+.three{
+    grid-column: 3 / 4;
+    justify-self: end;
+    padding: 10px;
+}
+#logout:link{
+    text-decoration: none;
+    color: black;
+}
+#logout:visited{
+    color: black;
+}
+#logout:hover{
+    color: rgb(0,200,5);
+}
+#logout:active{
+    color: black;
+}
+.dice{
+    height:5rem;
+}
+
+.content{
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.content p{
+    font-size: 1.5rem;
+}
+.content h3{
+    font-weight: 600;
+    font-size: 2rem;
+    color: rgb(0,200,5);
+}
+.reRoll{
+    text-align: center;
+    width: 35vw;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+form{
+    display: block;
+}
+input{ 
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 4px;
+    margin: 15px 0;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 20px;
+    outline: none;
+}
+input:focus{
+    border:1px solid rgb(0,200,5);
+}
+input:hover{
+    background-color: white;
+}
+input[type=submit]{
+    width: 150px;
+    background-color: rgb(0,200,5);
+    color: white;
+}
+.amount, .terms{
+    display: inline;
+}
+.amount input, .terms input{
+    width: auto;
+}
+.submit{
+    display: block;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .reRoll{
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 5rem;
+    }
+    .terms{
+        display: block;
+    }
+}
