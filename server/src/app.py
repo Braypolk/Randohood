@@ -36,9 +36,9 @@ def purchase():
     stockChoice = random.choice(stocks)
     print(stockChoice)
     # timeInForce must be gfd
-    # purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
-    # price = purchase["price"]
-    price=""
+    purchase = rh.order_buy_fractional_by_price(symbol=stockChoice, amountInDollars=amount, timeInForce='gfd')
+    price = purchase["price"]
+    # price=""
     return render_template("overview.html", randomStock=stockChoice, dollarAmountPurchased=amount, purchasePrice=price)
 
 @app.route("/logout")
