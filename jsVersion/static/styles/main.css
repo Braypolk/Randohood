@@ -28,6 +28,7 @@ div{
     margin: 0 4rem;
     vertical-align: top;
     font-size: .9rem;
+    padding-bottom: 50px
 }
 .title{
     display: inline-block;

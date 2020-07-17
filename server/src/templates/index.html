@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Randohood</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/main.css')}}">
 </head>
 <body>    
     <div class="top"></div>
@@ -13,7 +13,7 @@
         <div class="list">
             <h1 class="title">Welcome to  Randohood</h1>
             <img class="dice" src="../static/img/dices.svg" alt="dice">
-            <form id="login" action="" method="POST">
+            <form id="login" action="/" method="POST">
                 <!-- need to make this hidden somehow -->
                 <input type = "text" name = "username" placeholder="User Name" required>
                 <input type = "password" name = "password" placeholder="Password" required>
@@ -37,6 +37,5 @@
             </ul>
         </div>
     </div>
-    <script src="app.js"></script>
 </body>
 </html>

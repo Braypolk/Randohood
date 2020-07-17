@@ -4,23 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Randohood</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/styles/overview.css">
+    <link rel="stylesheet" type="text/css" href="styles/overview.css">
 </head>
-<body>
+<body onload="updateValues()">
     <div class="nav">
-        <div class="navItem one"><img class="dice" src="../static/img/dices.svg" alt="dice"></div>
+        <div class="navItem one"><img class="dice" src="img/dices.svg" alt="dice"></div>
         <div clss="navItem two"></div>
         <div class="navItem three"><a id="logout" href="/logout"><p>Logout</p></a></div>
     </div>
     <div class="content">
-        <p>You Purchased ${{dollarAmountPurchased}} worth of</p>
-        <h3>{{randomStock}}</h3>
+        <p id="purchasedAmount"></p>
+        <h3 id="randomStock"></h3>
         <p>at the market price of</p>
-        <h3>${{purchasePrice}}</h3>
+        <h3 id="purchasePrice">${{purchasePrice}}</h3>
     </div>
     <div class="reRoll">
         <p>Want to roll again?</p>
-        <p>Just reload the page to "invest" another ${{dollarAmountPurchased}}</p>
+        <p id="dollarAmountPurchased">Just reload the page to "invest" another ${{dollarAmountPurchased}}</p>
         <p>Or enter a dollar amount you want to "invest"</p>
         <form action="/purchase" method="POST">
             <div class="amount">
